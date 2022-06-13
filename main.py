@@ -9,7 +9,7 @@ cpu_answer = random.choice(choices)
 def repeat():
     global player_input
     player_input = input(
-        "select R for rock, S for scissors, P for paper:").upper()
+        "select R for rock, S for scissors, P for paper:").upper() # players can enter the right option in any case of their choice
 
 
 repeat()
@@ -18,6 +18,7 @@ while player_input not in choices:
     print("Error:Kindly select the right option\n")
 
     repeat()
+    #When there is a tie program must repeat
 else:
     while(player_input == cpu_answer):
         print("Player {} : CPU {}".format(player_input, cpu_answer))
@@ -25,6 +26,7 @@ else:
         print("There is a tie!!!")
 
         repeat()
+        #lets play the game and figure out the winner
     else:
         # Rock beats Scissors
         if(player_input == "R" and cpu_answer == "S"):
